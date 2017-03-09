@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ullas.model.Txn" table="TRANSACTION">
+		<id name="id" type="long">
+			<column name="TXN_ID" />
+			<generator class="increment"></generator>
+		</id>
+		<property name="date" type="date">
+			<column name="TXN_DATE"></column>
+		</property>
+		<property name="total" type="double">
+			<column name="txn_total" />
+		</property>
+		<one-to-one name="customer" class="com.ullas.model.Customer"
+			cascade="save/update"></one-to-one>
+
+	</class>
+</hibernate-mapping>

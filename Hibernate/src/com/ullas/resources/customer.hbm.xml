@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ullas.model.Customer" table="CUSTOMER">
+		<id name="id" type="long">
+			<column name="TXN_ID"></column>
+			<generator class="foreign">
+				<param name="property">txn</param>
+			</generator>
+		</id>
+		<one-to-one name="txn" class="com.ullas.model.Txn" constrained="true"></one-to-one>
+	</class>
+</hibernate-mapping>
